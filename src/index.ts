@@ -1,6 +1,6 @@
 import { ApiException, fromHono } from "chanfana";
 import { Hono } from "hono";
-import userinfo from "./endpoints/userinfo"; // <-- Import your new endpoint
+import userinfo from "./userinfo"; // <-- CHANGED: direct import from src/
 import { ContentfulStatusCode } from "hono/utils/http-status";
 import { DummyEndpoint } from "./endpoints/dummyEndpoint";
 
@@ -41,7 +41,7 @@ const openapi = fromHono(app, {
 });
 
 // Register Userinfo endpoint
-openapi.route("/userinfo", userinfo);   // <-- THIS IS THE MAIN CHANGE
+openapi.route("/userinfo", userinfo);   // <-- Your main endpoint
 
 // Register other endpoints
 openapi.post("/dummy/:slug", DummyEndpoint);
