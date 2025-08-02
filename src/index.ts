@@ -1,6 +1,6 @@
 import { ApiException, fromHono } from "chanfana";
 import { Hono } from "hono";
-import userinfo from "./userinfo"; // <-- CHANGED: direct import from src/
+import userinfo from "/src/userinfo"; // <-- CHANGED: direct import from src/
 import { ContentfulStatusCode } from "hono/utils/http-status";
 import { DummyEndpoint } from "./endpoints/dummyEndpoint";
 
